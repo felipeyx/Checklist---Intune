@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checklist para Integração com Intune</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 700px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #f4f4f4;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+      }
+      h2 {
+        color: #34495e;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 5px;
+        margin-top: 20px;
+      }
+      .checklist-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        background: white;
+        padding: 12px;
+        border-radius: 8px;
+        transition: background 0.3s, transform 0.2s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .checklist-item:hover {
+        background: #e3f2fd;
+        transform: scale(1.02);
+      }
+      .checklist-item input {
+        margin-right: 10px;
+      }
+      .checked {
+        color: green;
+        font-weight: bold;
+      }
+      button {
+        background: #007bff;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 15px;
+        font-size: 16px;
+        transition: background 0.3s;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      button:active {
+        background: #28a745;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    </style>
+    <script>
+      function toggleCheck(event) {
+        const label = event.target.nextElementSibling;
+        label.classList.toggle("checked", event.target.checked);
+      }
+      function changeButtonColor(event) {
+        event.target.style.backgroundColor = "#28a745";
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Checklist para Integração com Intune</h1>
+
+    <label>Placa de Patrimônio:</label>
+    <input type="text" id="patrimonio" placeholder="Digite o patrimônio" />
+
+    <div>
+      <h2>Procedimentos</h2>
+      <div class="checklist-item">
+        <input type="checkbox" onclick="toggleCheck(event)" /><label
+          >1 - Verificar qual Windows está sendo utilizado</label
+        >
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" onclick="toggleCheck(event)" /><label
+          >2 - Checar os aplicativos instalados</label
+        >
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" onclick="toggleCheck(event)" /><label
+          >3 - Verificar o status do BitLocker</label
+        >
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" onclick="toggleCheck(event)" /><label
+          >4 - Verificar a conta em uso</label
+        >
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" onclick="toggleCheck(event)" /><label
+          >5 - Desabilitar a conta atual</label
+        >
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" onclick="toggleCheck(event)" /><label
+          >6 - Executar o Profwiz</label
+        >
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" onclick="toggleCheck(event)" /><label
+          >7 - Entrar no gerenciamento do computador</label
+        >
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" onclick="toggleCheck(event)" /><label
+          >8 - Remover o administrador da conta atual</label
+        >
+      </div>
+    </div>
+
+    <button onclick="changeButtonColor(event)">Confirmar Checklist</button>
+  </body>
+</html>
